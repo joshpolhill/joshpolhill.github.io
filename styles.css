@@ -4,7 +4,8 @@ header, footer {
 }
 main {
 	display: inline-flex;
-	width: 100%
+	width: 100%;
+	height: 1000px;
 }
 
 main>* {
@@ -14,11 +15,19 @@ main>* {
 
 .left-banner {
 	width: 15%;
+
 }
 
 .mid-section {
 	width: 70%;
 	text-align: center;
+	padding: repeat(4, 20px);
+	margin: 0px 40px;
+	color: lightgray;
+	line-height: 80px;
+	letter-spacing: auto;
+	font-weight: 600;
+	font-family: Georgia;
 }
 
 .right-banner {
