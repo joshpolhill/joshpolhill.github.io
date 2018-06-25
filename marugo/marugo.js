@@ -5,6 +5,23 @@ var sentences = [
 	"「_HITO-0_、早く_TEKEIDOUSHI-0_きなされ。」" +
 	"「_HITO-1_も_TEKEIDOUSHI-1_な。」" +
 	"毎日_FUKUSHI-0_いいあってでかけます。",
+
+	"_HITO-0_:着いった！ほら、_HITO-1_。これは、_BASHO-0_だぞ！" +
+	"_HITO-1_:うん、_HITO-0_、ちょっとね。待ってくれ。なんで_MEISHI-0_を持ってくきたんだの？" +
+	"_HITO-0_:これから、俺らの新しい_MEISHI-1_を_JISHOKEIDOUSHI-0_ぞ。_MEISHI-2_としてたくさん可能があるんだよ。" +
+	"_HITO-1_:無視した...そうかも知れないけど、なんでこのところに引っ越さないと？" +
+	"_HITO-0_:ほら見て！_MEISHI-2_は必要だよ。_BASHO-1_の前の_MEISHI-2_が辞めてしまって、俺らのチャンスだ！" +
+	"_HITO-1_:正直に_MEISHI-2_になるかどうかどうでもいいと思うけど。_BASHO-2_から出かける必要がなかったよ。" +
+	"_HITO-0_:つまんない、_HITO-1_。これは俺らの新たな_SURUDOUSHI-0_だよ。元気出せよ！" +
+	"_HITO-1_:全く、仕方がないな。では、次はどこに行かないと？",
+
+	"_MEISHI-0_の戦闘であって、_MEISHI-1_に向いて走ってた。" +
+	"突然に私の小隊の側に_MEISHI-2_が爆発してしまった。" +
+	"早速最寄りの_BASHO-0_を探してて、思わずに_TEKEIDOUSHI-0_始めた。" +
+	"_BASHO-0_を着いたとたん、火事を作るために_KAKOKEINODOUSHI-0_。" +
+	"火事を作ったと、敵が見つけてしまって、急に私たちに_MEISHI-4_を_KAKOKEINODOUSHI-1_始めた。" +
+	"早速_MEISHI-5_の後ろに隠して、打ち返した。",
+
 	"こんにちは。_MEISHI-0_が大好きです。じゃねー！",
 
 	"まさか、_KAKOKEINODOUSHI-0_たばっかなの!",
@@ -23,10 +40,13 @@ var bunshou_map = [
 	['TEKEIDOUSHI','て形動詞'],
 	['JISHOKEIDOUSHI','辞書形動詞'],
 	['KAKOKEINODOUSHI','過去形の動詞'],
+	['TEIIRUDOUSHI','ている動詞'],
 	['RENYOUKEI','連用形'],
 	['KEIYOUSHI','形容詞'],
 	['KEIYOUDOUSHI','形容動詞'],
 	['FUKUSHI','副詞'],
+	['KANJOU','感情'],
+	['SHIGOTO','仕事'],
 ]
 
 String.prototype.replaceAll = function(search, replacement) {
