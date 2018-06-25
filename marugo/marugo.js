@@ -6,6 +6,11 @@ var sentences = [
 	"「_HITO-1_も_TEKEIDOUSHI-1_な。」" +
 	"毎日_FUKUSHI-0_いいあってでかけます。",
 	"こんにちは。_MEISHI-0_が大好きです。じゃねー！",
+
+	"まさか、_DOUSHI-0_たばっかなの!",
+	"休日は_SURUDOUSHI-0_をしたりして過ごす。",
+	"_HITO-0_が_SURUDOUSHI-0_をして気持ちが悪いなあ。",
+	"窓を開けたとたんに、が_MEISHI-0_跳んでいった。それから、_HITO-0_が出ます。"
 ];
 
 var bunshou_map = [
