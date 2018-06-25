@@ -22,12 +22,21 @@ var sentences = [
 	"火事を作ったと、敵が見つけてしまって、急に私たちに_MEISHI-4_を_KAKOKEINODOUSHI-1_始めた。" +
 	"早速_MEISHI-5_の後ろに隠して、打ち返した。",
 
+	"降り始めた_MEISHI-0_は_MEISHI-1_消して" +
+	"_KEIYOUDOUSHI-0_の_BASHO-0_に一人の_MEISHI-2_" +
+	"_MEISHI-3_が心に_JISHOKEIDOUSHI-0_の" +
+	"このままじゃ、ダメなんだと" +
+	"とだもい、傷付き" +
+	"誰にも打ち明けずに_TEKEIDOUSHI-0_た" +
+	"それももう、やめよう",
+
 	"こんにちは。_MEISHI-0_が大好きです。じゃねー！",
 
 	"まさか、_KAKOKEINODOUSHI-0_たばっかなの!",
 	"休日は_SURUDOUSHI-0_をのしたりして過ごす。",
 	"_HITO-0_が_SURUDOUSHI-0_のをして気持ちが悪いなあ。",
-	"窓を開けたとたんに、_MEISHI-0_が跳んでいった。それから、_HITO-0_が出ます。"
+	"窓を開けたとたんに、_MEISHI-0_が跳んでいった。それから、_HITO-0_が出ます。",
+	"私は_MEISHI-0_を通して、_HITO-0_と知り合った。"
 ];
 
 var bunshou_map = [
