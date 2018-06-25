@@ -7,9 +7,9 @@ var sentences = [
 	"毎日_FUKUSHI-0_いいあってでかけます。",
 	"こんにちは。_MEISHI-0_が大好きです。じゃねー！",
 
-	"まさか、_DOUSHI-0_たばっかなの!",
-	"休日は_SURUDOUSHI-0_をしたりして過ごす。",
-	"_HITO-0_が_SURUDOUSHI-0_をして気持ちが悪いなあ。",
+	"まさか、_KAKOKEINODOUSHI-0_たばっかなの!",
+	"休日は_SURUDOUSHI-0_をのしたりして過ごす。",
+	"_HITO-0_が_SURUDOUSHI-0_のをして気持ちが悪いなあ。",
 	"窓を開けたとたんに、_MEISHI-0_が跳んでいった。それから、_HITO-0_が出ます。"
 ];
 
@@ -22,6 +22,7 @@ var bunshou_map = [
 	['SURUDOUSHI', 'する動詞'],
 	['TEKEIDOUSHI','て形動詞'],
 	['JISHOKEIDOUSHI','辞書形動詞'],
+	['KAKOKEINODOUSHI','過去形の動詞'],
 	['RENYOUKEI','連用形'],
 	['KEIYOUSHI','形容詞'],
 	['KEIYOUDOUSHI','形容動詞'],
