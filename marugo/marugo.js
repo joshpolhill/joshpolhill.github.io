@@ -10,7 +10,7 @@ var sentences = [
 	"まさか、_DOUSHI-0_たばっかなの!",
 	"休日は_SURUDOUSHI-0_をしたりして過ごす。",
 	"_HITO-0_が_SURUDOUSHI-0_をして気持ちが悪いなあ。",
-	"窓を開けたとたんに、が_MEISHI-0_跳んでいった。それから、_HITO-0_が出ます。"
+	"窓を開けたとたんに、_MEISHI-0_が跳んでいった。それから、_HITO-0_が出ます。"
 ];
 
 var bunshou_map = [
