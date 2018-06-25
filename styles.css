@@ -24,10 +24,14 @@ main>* {
 	padding: repeat(4, 20px);
 	margin: 0px 40px;
 	color: lightgray;
-	line-height: 80px;
+	line-height: 30px;
 	letter-spacing: auto;
 	font-weight: 600;
 	font-family: Georgia;
+}
+
+.mid-section p {
+	padding: 10px;
 }
 
 .right-banner {

@@ -23,22 +23,48 @@ var bunshou_map = [
 	['FUKUSHI','副詞'],
 ]
 
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.split(search).join(replacement);
+};
+
 var current_story = sentences[Math.floor(Math.random()* sentences.length)];
 var next_word;
 
 var main = function() {
 	updateForm();
+	updateWordsLeft(current_story);
 	$('.mid-section').on('submit', "form", function(e) {
 		e.preventDefault();
-		var inputed_text = $("#input").val();
-		current_story = current_story.replace(next_word, inputed_text);
-		updateForm();
-		if (next_word === "") {
-			$('#story').text(current_story);
-			$('#submit').attr("disabled", "disabled");
+		if ($("#input").val() != "") {
+			var inputed_text = $("#input").val();
+			$("#input").val("");
+			current_story = current_story.replaceAll(next_word, inputed_text);
+			updateForm();
+			updateWordsLeft(current_story);
+			if (next_word === "") {
+				$('#story').text(current_story);
+				$('#submit').attr("disabled", "disabled");
+			}
 		}
-	})
+	});
+
+	$('#reset').on('click', function(e) {
+		window.location.reload(false);
+	});
 }
+
+var updateWordsLeft = function(sentence) {
+	var words_left = 0;
+	var x = findNextWord(sentence);
+	while (x != "") {
+		words_left++;
+		sentence = sentence.replaceAll(x, "X");
+		x = findNextWord(sentence);
+	}
+
+	$("#words-left").text("残り単語: " + words_left)
+};
 
 var updateForm = function() {
 	next_word = findNextWord(current_story);
