@@ -78,16 +78,46 @@
 			this.y = y;
 			this.width = width;
 			this.height = height;
+			this.gravity = 1;
+			this.xVelocity = 0;
+			this.yVelocity = 0;
 			this.render = function() {
 				var ctx = myGameArea.context;
 				ctx.fillStyle = "red";
 				ctx.fillRect(this.x, this.y, this.width, this.height);
 			};
 			this.update = function() {
-				if (keys.left) this.x--;
-				if (keys.up) this.y--;
-				if (keys.right) this.x++;
-				if (keys.down) this.y++;
+				if (keys.left) 
+					this.xVelocity -= 0.5;
+				else if (keys.right) 
+					this.xVelocity += 0.5;
+				else {
+					this.xVelocity *= 0.8;
+					if (Math.abs(this.xVelocity) < 0.3)
+						this.xVelocity = 0;
+				}
+				if (keys.up) 
+					this.yVelocity -= 0.5;
+				else if (keys.down) 
+					this.yVelocity += 0.5;
+				else {
+					this.yVelocity *= 0.8;
+					if (Math.abs(this.yVelocity) < 0.3)
+						this.yVelocity = 0;
+				}
+
+				if (this.xVelocity > 3)
+					this.xVelocity = 3;
+				if (this.yVelocity > 3)
+					this.yVelocity = 3;
+
+				if (this.xVelocity < -3)
+					this.xVelocity = -3;
+				if (this.yVelocity < -3)
+					this.yVelocity = -3;
+
+	   			this.y += this.yVelocity;
+	   			this.x += this.xVelocity;
 			};
 		}
 
