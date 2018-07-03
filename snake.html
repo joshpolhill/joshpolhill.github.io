@@ -8,15 +8,15 @@
 </head>
 <body onload="startGame()">
 	<header>
-		<h1>カンバス</h1>
+		<h1>スネーク</h1>
 	</header>
 	<main>
 		<section class="left-banner">
 			<nav>
 				<a href="index.html">ホーム</a>
 				<a href="marugo.html">丸語</a>
-				<a class="active" href="canvas.html">カンバス</a>
-				<a href="snake.html">スネーク</a>
+				<a href="canvas.html">カンバス</a>
+				<a class="active" href="snake.html">スネーク</a>
 			</nav>
 		</section>
 		<section class="mid-section">
@@ -26,10 +26,10 @@
 	</main>
 	<footer></footer>
 
+	<script type="text/javascript" src="snake.js"></script>
 	<script type="text/javascript">
-
-		var square = new Square(30, 30, 32, 32);
-		var friction = 0.8;
+		
+		var snake = new Snake(7, 5, 1, "blue");
 
 		var keys = {
 			left: false,
@@ -75,73 +75,6 @@
 		    }
 		});
 
-		function Square(x, y, width, height) {
-			this.x = x;
-			this.y = y;
-			this.width = width;
-			this.height = height;
-			this.gravity = 1;
-			this.xVelocity = 0;
-			this.yVelocity = 0;
-			this.render = function() {
-				var ctx = myGameArea.context;
-				ctx.fillStyle = "red";
-				ctx.fillRect(this.x, this.y, this.width, this.height);
-			};
-			this.update = function() {
-				if (keys.left) 
-					this.xVelocity -= 0.5;
-				else if (keys.right) 
-					this.xVelocity += 0.5;
-				else {
-					this.xVelocity *= 0.8;
-					if (Math.abs(this.xVelocity) < 0.3)
-						this.xVelocity = 0;
-				}
-				if (keys.up) 
-					this.yVelocity -= 0.5;
-				else if (keys.down) 
-					this.yVelocity += 0.5;
-				else {
-					this.yVelocity *= friction;
-					if (Math.abs(this.yVelocity) < 0.3)
-						this.yVelocity = 0;
-				}
-
-				if (this.xVelocity > 3)
-					this.xVelocity = 3;
-				if (this.yVelocity > 3)
-					this.yVelocity = 3;
-
-				if (this.xVelocity < -3)
-					this.xVelocity = -3;
-				if (this.yVelocity < -3)
-					this.yVelocity = -3;
-
-	   			this.y += this.yVelocity;
-	   			this.x += this.xVelocity;
-
-	   			
-				if (this.y > (myGameArea.canvas.height - this.height) - this.yVelocity) {
-				this.yVelocity = -this.yVelocity * friction;
-				this.y = myGameArea.canvas.height - this.height;
-				} else (this.yVelocity += 0.05);
-				if (this.y < 0 - this.yVelocity) {
-				this.yVelocity = -this.yVelocity * friction;
-				this.y = 0;
-				} else (this.yVelocity += 0.05);	
-				if (this.x > (myGameArea.canvas.width - this.width)) {
-				this.xVelocity = -this.xVelocity * friction;
-				this.x = myGameArea.canvas.width - this.width;
-				}
-				if (this.x < 0) {
-				this.xVelocity = -this.xVelocity * friction;
-				this.x = 0;
-				} 
-			
-			};
-		}
-
 		var myGameArea = {
 		    canvas : document.createElement("canvas"),
 		    start : function() {
@@ -158,16 +91,15 @@
 		}
 
 		function update() {
-			square.update();
 			render();
 		}
 
 		function render() {
 			myGameArea.clear();
 			var ctx = myGameArea.context;
-			ctx.fillStyle = "blue";
+			ctx.fillStyle = "black";
 			ctx.fillRect(0, 0, myGameArea.canvas.width, myGameArea.canvas.height);
-			square.render()
+			snake.render();
 		}
 	</script>
 
