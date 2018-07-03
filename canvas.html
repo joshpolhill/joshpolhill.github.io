@@ -102,7 +102,7 @@
 				else if (keys.down) 
 					this.yVelocity += 0.5;
 				else {
-					this.yVelocity *= 0.8;
+					this.yVelocity *= friction;
 					if (Math.abs(this.yVelocity) < 0.3)
 						this.yVelocity = 0;
 				}
@@ -121,17 +121,21 @@
 	   			this.x += this.xVelocity;
 
 	   			
-				if (this.y > 328 - this.yVelocity) {
+				if (this.y > (myGameArea.canvas.height - this.height) - this.yVelocity) {
 				this.yVelocity = -this.yVelocity * friction;
+				this.y = myGameArea.canvas.height - this.height;
 				} else (this.yVelocity += 0.05);
 				if (this.y < 0 - this.yVelocity) {
 				this.yVelocity = -this.yVelocity * friction;
+				this.y = 0;
 				} else (this.yVelocity += 0.05);	
-				if (this.x > 448) {
+				if (this.x > (myGameArea.canvas.width - this.width)) {
 				this.xVelocity = -this.xVelocity * friction;
+				this.x = myGameArea.canvas.width - this.width;
 				}
 				if (this.x < 0) {
 				this.xVelocity = -this.xVelocity * friction;
+				this.x = 0;
 				} 
 			
 			};
