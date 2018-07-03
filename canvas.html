@@ -28,6 +28,7 @@
 	<script type="text/javascript">
 
 		var square = new Square(30, 30, 32, 32);
+		var friction = 0.8;
 
 		var keys = {
 			left: false,
@@ -118,6 +119,21 @@
 
 	   			this.y += this.yVelocity;
 	   			this.x += this.xVelocity;
+
+	   			
+				if (this.y > 328 - this.yVelocity) {
+				this.yVelocity = -this.yVelocity * friction;
+				} else (this.yVelocity += 0.05);
+				if (this.y < 0 - this.yVelocity) {
+				this.yVelocity = -this.yVelocity * friction;
+				} else (this.yVelocity += 0.05);	
+				if (this.x > 448) {
+				this.xVelocity = -this.xVelocity * friction;
+				}
+				if (this.x < 0) {
+				this.xVelocity = -this.xVelocity * friction;
+				} 
+			
 			};
 		}
 
