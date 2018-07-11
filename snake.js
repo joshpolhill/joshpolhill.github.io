@@ -18,10 +18,42 @@ Square.prototype.render = function() {
 }
 
 function Snake(x, y, size, color) {
+	Square.call(this);
 	this.x = x;
 	this.y = y;
 	this.size = size;
 	this.color = color;
+	this.dir = 'R';
+	this.move = function() {
+		switch (this.dir) {
+			case 'L': 
+				this.x--;
+				break;
+			case 'U': 
+				this.y--;
+				break;
+			case 'R': 
+				this.x++;
+				break;
+			case 'D': 
+				this.y++;
+				break;
+		}
+	};
+	this.changeDir = function() {
+		if(keys.left)
+			this.dir = 'L';
+		else if(keys.up)
+			this.dir = 'U';
+		else if(keys.right)
+			this.dir = 'R';
+		else if(keys.down)
+			this.dir = 'D';
+	};
+	this.update = function() {
+		this.changeDir();
+		this.move();
+	}
 }
 
 Snake.prototype = Object.create(Square.prototype);
