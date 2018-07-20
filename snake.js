@@ -18,6 +18,7 @@ Square.prototype.render = function() {
 }
 
 function Snake(x, y, size, color) {
+	Square.call(this);
 	this.x = x;
 	this.y = y;
 	this.size = size;
@@ -48,6 +49,10 @@ function Snake(x, y, size, color) {
 			this.dir = 'R';
 		else if(keys.down)
 			this.dir = 'D';
+	};
+	this.update = function() {
+		this.changeDir();
+		this.move();
 	}
 }
 
