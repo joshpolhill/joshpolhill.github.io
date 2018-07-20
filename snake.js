@@ -40,6 +40,12 @@ function Snake(x, y, size, color) {
 				break;
 		}
 	};
+	this.eatApple = function() {
+		if(this.x === apple.x && this.y === apple.y) {
+			apple.x = Math.floor(Math.random() * ((myGameArea.canvas.width - this.size)/GS));
+			apple.y = Math.floor(Math.random() * ((myGameArea.canvas.height - this.size)/GS));
+		}
+	}
 	this.changeDir = function() {
 		if(keys.left)
 			this.dir = 'L';
@@ -53,16 +59,9 @@ function Snake(x, y, size, color) {
 	this.update = function() {
 		this.changeDir();
 		this.move();
-	}
+		this.eatApple();
+	};
 }
-
-function eatApple() {
-	if(this.x === this.x && this.y === this.y) {
-		this.x = math.floor(math.random() * GS);
-		this.y = math.floor(math.random() * GS);
-	}
-}
-	
 
 Snake.prototype = Object.create(Square.prototype);
 
