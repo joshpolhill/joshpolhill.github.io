@@ -95,7 +95,7 @@
 				else if (keys.right) 
 					this.xVelocity += 0.5;
 				else {
-					this.xVelocity *= 0.8;
+					this.xVelocity *= friction;
 					if (Math.abs(this.xVelocity) < 0.3)
 						this.xVelocity = 0;
 				}

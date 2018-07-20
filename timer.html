@@ -22,7 +22,7 @@
 		</section>
 		<section class="mid-section">
 			<div id="game"></div>
-			<p id="timer">_____</p>
+			<p id="timer"></p>
 		</section>
 		<section class="right-banner"></section>
 	</main>
@@ -30,16 +30,24 @@
 
 	<script type="text/javascript">
 		var counter = 0;
+		var countDown = 120;
 		
 		function setUp() {
-			var timer = $('#timer');
+			var timer = $(convertSecond('#timer'));
 
 			this.interval = setInterval(update, 1000);
 
+		function convertSecond(s) {
+			var min = Math.floor(s / 60);
+			var sec = s % 60;
+			return (min) + ':' + (sec);
+
+		}
 			function update() {
 				counter++;
-				timer.html(counter);
+				timer.html(convertSecond(countDown - counter));
 			}
 		}
+
 		
 	</script>
